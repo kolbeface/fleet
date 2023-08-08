@@ -1,17 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = "us-west-2"
-  profile = "security" 
-}
-
 locals {
   environment = [for k, v in var.fleet_config.extra_environment_variables : {
     name  = k
