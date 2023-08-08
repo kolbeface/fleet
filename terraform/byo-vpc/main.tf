@@ -1,17 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = "us-west-2"
-  profile = "security" 
-}
-
 module "byo-db" {
   source = "./byo-db"
   vpc_id = var.vpc_config.vpc_id
