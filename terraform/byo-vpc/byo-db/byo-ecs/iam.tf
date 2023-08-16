@@ -34,7 +34,7 @@ resource "aws_iam_role" "main" {
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
-resource "aws_iam_policy" "main" {
+resource "aws_iam_policy_2" "main" {
   count       = var.fleet_config.iam_role_arn == null ? 1 : 0
   name        = var.fleet_config.iam.role.policy_name
   description = "IAM policy that Fleet application uses to define access to AWS resources"
