@@ -257,12 +257,12 @@ variable "fleet_config" {
       name      = optional(string, null)
       region    = optional(string, null)
       create    = optional(bool, true)
-      prefix    = optional(string, "fleet")
+      prefix    = optional(string, "fleet-kolbe")
       retention = optional(number, 5)
       }), {
       name      = null
       region    = null
-      prefix    = "fleet"
+      prefix    = "fleet-kolbe"
       retention = 5
     })
     loadbalancer = optional(object({
@@ -341,7 +341,7 @@ variable "fleet_config" {
       name      = null
       region    = null
       create    = true
-      prefix    = "fleet"
+      prefix    = "fleet-kolbe"
       retention = 5
     }
     loadbalancer = {
