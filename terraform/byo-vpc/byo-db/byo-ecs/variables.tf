@@ -14,7 +14,7 @@ variable "fleet_config" {
     mem                          = optional(number, 4096)
     cpu                          = optional(number, 512)
     image                        = optional(string, "fleetdm/fleet:v4.31.1")
-    family                       = optional(string, "fleet")
+    family                       = optional(string, "fleet-kolbe")
     sidecars                     = optional(list(any), [])
     depends_on                   = optional(list(any), [])
     mount_points                 = optional(list(any), [])
@@ -24,12 +24,12 @@ variable "fleet_config" {
     extra_execution_iam_policies = optional(list(string), [])
     extra_secrets                = optional(map(string), {})
     security_groups              = optional(list(string), null)
-    security_group_name          = optional(string, "fleet")
+    security_group_name          = optional(string, "fleet-kolbe")
     iam_role_arn                 = optional(string, null)
     service = optional(object({
-      name = optional(string, "fleet")
+      name = optional(string, "fleet-kolbe")
       }), {
-      name = "fleet"
+      name = "fleet-kolbe"
     })
     database = object({
       password_secret_arn = string
@@ -46,12 +46,12 @@ variable "fleet_config" {
       name      = optional(string, null)
       region    = optional(string, null)
       create    = optional(bool, true)
-      prefix    = optional(string, "fleet")
+      prefix    = optional(string, "fleet-kolbe")
       retention = optional(number, 5)
       }), {
       name      = null
       region    = null
-      prefix    = "fleet"
+      prefix    = "fleet-kolbe"
       retention = 5
     })
     loadbalancer = object({
@@ -95,7 +95,7 @@ variable "fleet_config" {
     mem                          = 512
     cpu                          = 256
     image                        = "fleetdm/fleet:v4.31.1"
-    family                       = "fleet"
+    family                       = "fleet-kolbe"
     sidecars                     = []
     depends_on                   = []
     mount_points                 = []
@@ -105,10 +105,10 @@ variable "fleet_config" {
     extra_execution_iam_policies = []
     extra_secrets                = {}
     security_groups              = null
-    security_group_name          = "fleet"
+    security_group_name          = "fleet-kolbe"
     iam_role_arn                 = null
     service = {
-      name = "fleet"
+      name = "fleet-kolbe"
     }
     database = {
       password_secret_arn = null
@@ -125,7 +125,7 @@ variable "fleet_config" {
       name      = null
       region    = null
       create    = true
-      prefix    = "fleet"
+      prefix    = "fleet-kolbe"
       retention = 5
     }
     loadbalancer = {
