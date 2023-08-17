@@ -74,21 +74,21 @@ variable "fleet_config" {
     })
     iam = optional(object({
       role = optional(object({
-        name        = optional(string, "fleet-role")
-        policy_name = optional(string, "fleet-iam-policy")
+        name        = optional(string, "fleet-role-kolbe")
+        policy_name = optional(string, "fleet-iam-policy-kolbe")
         }), {
-        name        = "fleet-role"
-        policy_name = "fleet-iam-policy"
+        name        = "fleet-role-kolbe"
+        policy_name = "fleet-iam-policy-kolbe"
       })
       execution = optional(object({
-        name        = optional(string, "fleet-execution-role")
-        policy_name = optional(string, "fleet-execution-role")
+        name        = optional(string, "fleet-execution-role-kolbe")
+        policy_name = optional(string, "fleet-execution-role-kolbe")
         }), {
-        name        = "fleet-execution-role"
-        policy_name = "fleet-iam-policy-execution"
+        name        = "fleet-execution-role-kolbe"
+        policy_name = "fleet-iam-policy-execution-kolbe"
       })
       }), {
-      name = "fleetdm-execution-role"
+      name = "fleetdm-execution-role-kolbe"
     })
   })
   default = {
@@ -143,12 +143,12 @@ variable "fleet_config" {
     }
     iam = {
       role = {
-        name        = "fleet-role"
-        policy_name = "fleet-iam-policy"
+        name        = "fleet-role-kolbe"
+        policy_name = "fleet-iam-policy-kolbe"
       }
       execution = {
         name        = "fleet-execution-role"
-        policy_name = "fleet-iam-policy-execution"
+        policy_name = "fleet-iam-policy-execution-kolbe"
       }
     }
   }
