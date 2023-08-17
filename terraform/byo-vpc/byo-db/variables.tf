@@ -128,10 +128,10 @@ variable "fleet_config" {
     iam = optional(object({
       role = optional(object({
         name        = optional(string, "fleet-role")
-        policy_name = optional(string, "fleet-iam-policy")
+        policy_name = optional(string, "fleet-kolbe-iam-policy")
         }), {
         name        = "fleet-role"
-        policy_name = "fleet-iam-policy"
+        policy_name = "fleet-kolbe-iam-policy"
       })
       execution = optional(object({
         name        = optional(string, "fleet-execution-role")
@@ -197,7 +197,7 @@ variable "fleet_config" {
     iam = {
       role = {
         name        = "fleet-role"
-        policy_name = "fleet-iam-policy"
+        policy_name = "fleet-kolbe-iam-policy"
       }
       execution = {
         name        = "fleet-execution-role"
