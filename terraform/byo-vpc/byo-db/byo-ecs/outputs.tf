@@ -8,7 +8,7 @@ output "task_definition" {
 
 output "iam_role_arn" {
   # Always respond sanely even if we did not generate
-  value = var.fleet_config.iam_role_arn == null ? aws_iam_role.main[0].arn : var.fleet_config.iam_role_arn
+  value = var.fleet_config.iam_role_arn == null ? aws_iam_role.main_kolbe[0].arn : var.fleet_config.iam_role_arn
 }
 
 output "execution_iam_role_arn" {
