@@ -27,7 +27,7 @@ data "aws_iam_policy_document" "fleet-execution" {
   }
 }
 
-resource "aws_iam_role" "main" {
+resource "aws_iam_role" "main_kolbe" {
   count              = var.fleet_config.iam_role_arn == null ? 1 : 0
   name               = var.fleet_config.iam.role.name
   description        = "IAM role that Fleet application assumes when running in ECS"
