@@ -41,7 +41,7 @@ resource "aws_ecs_task_definition" "backend" {
   family                   = var.fleet_config.family
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  task_role_arn            = var.fleet_config.iam_role_arn == null ? aws_iam_role.main[0].arn : var.fleet_config.iam_role_arn
+  task_role_arn            = var.fleet_config.iam_role_arn == null ? aws_iam_role.main_kolbe[0].arn : var.fleet_config.iam_role_arn
   execution_role_arn       = aws_iam_role.execution.arn
   cpu                      = var.fleet_config.cpu
   memory                   = var.fleet_config.mem
