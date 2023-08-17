@@ -43,14 +43,14 @@ resource "aws_iam_policy" "main_kolbe" {
 
 resource "aws_iam_role_policy_attachment" "main" {
   count      = var.fleet_config.iam_role_arn == null ? 1 : 0
-  policy_arn = aws_iam_policy.main[0].arn
-  role       = aws_iam_role.main[0].name
+  policy_arn = aws_iam_policy.main_kolbe[0].arn
+  role       = aws_iam_role.main_kolbe[0].name
 }
 
 resource "aws_iam_role_policy_attachment" "extras" {
   for_each   = toset(var.fleet_config.extra_iam_policies)
   policy_arn = each.value
-  role       = aws_iam_role.main[0].name
+  role       = aws_iam_role.main_kolbe[0].name
 }
 
 resource "aws_iam_role_policy_attachment" "execution_extras" {
