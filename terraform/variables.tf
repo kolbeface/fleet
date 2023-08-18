@@ -1,4 +1,4 @@
-variable "vpc" {
+ variable "vpc" {
   type = object({
     name                = optional(string, "fleet")
     cidr                = optional(string, "10.10.0.0/16")
@@ -391,7 +391,7 @@ variable "alb_config" {
     security_groups = optional(list(string), [])
     access_logs     = optional(map(string), {})
     allowed_cidrs   = optional(list(string), ["0.0.0.0/0"])
-    internal        = true
+    internal        = optional(bool, true)
   })
   default = {}
 }
