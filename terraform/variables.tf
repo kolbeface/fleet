@@ -391,6 +391,7 @@ variable "alb_config" {
     security_groups = optional(list(string), [])
     access_logs     = optional(map(string), {})
     allowed_cidrs   = optional(list(string), ["0.0.0.0/0"])
+    internal        = true
   })
   default = {}
 }
