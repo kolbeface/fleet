@@ -48,7 +48,7 @@ module "byo-vpc" {
   alb_config = merge(var.alb_config, {
     subnets         = module.vpc.public_subnets
     certificate_arn = var.certificate_arn
-    internal        = var.alb_config.internal
+    #internal        = var.alb_config.internal
   })
   ecs_cluster  = var.ecs_cluster
   fleet_config = var.fleet_config
