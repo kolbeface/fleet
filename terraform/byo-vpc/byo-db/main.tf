@@ -27,6 +27,7 @@ module "cluster" {
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "8.2.1"
+  internal = var.alb_config.internal
 
   name = var.alb_config.name
 
