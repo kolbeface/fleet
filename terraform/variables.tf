@@ -390,7 +390,7 @@ variable "alb_config" {
     name            = optional(string, "fleet")
     security_groups = optional(list(string), [])
     access_logs     = optional(map(string), {})
-    allowed_cidrs   = optional(list(string), ["10.10.0.0/16"])
+    allowed_cidrs   = optional(list(string), ["10.10.1.0/24"])
     internal        = optional(bool, true)
   })
   default = {}
