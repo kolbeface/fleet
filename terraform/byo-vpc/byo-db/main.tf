@@ -81,7 +81,7 @@ module "alb" {
 }
 
 resource "aws_lb_listener_rule" "static" {
-  listener_arn = aws_lb_listener.var.alb_config.name.arn
+  listener_arn = aws_lb_listener.fleet.arn
   priority     = 1
 
   action {
