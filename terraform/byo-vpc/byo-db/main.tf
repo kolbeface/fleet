@@ -27,7 +27,6 @@ module "cluster" {
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "8.2.1"
-  #internal = var.alb_config.internal
 
   name = var.alb_config.name
 
@@ -79,6 +78,21 @@ module "alb" {
       }
     }
   ]
+}
+
+resource "aws_lb_listener_rule" "static" {
+  listener_arn = aws_lb_listener.var.alb_config.name.arn
+  priority     = 1
+
+  action {
+    type = "fixed-response"
+
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "Error - Unauthorized"
+      status_code  = "503"
+    }
+  }
 }
 
 resource "aws_security_group" "alb" {
