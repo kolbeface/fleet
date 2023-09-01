@@ -80,8 +80,8 @@ module "alb" {
   ]
 }
 
-resource "aws_lb_listener" "front_end" {
-  load_balancer_arn = aws_lb.front_end.arn
+resource "aws_lb_listener" "fleet" {
+  load_balancer_arn = aws_lb.fleet.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-TLS-1-2-2017-01"
@@ -89,12 +89,12 @@ resource "aws_lb_listener" "front_end" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.front_end.arn
+    target_group_arn = aws_lb_target_group.fleet.arn
   }
 }
 
 resource "aws_lb_listener_rule" "static" {
-  listener_arn = aws_lb_listener.front_end.arn
+  listener_arn = aws_lb_listener.fleet.arn
   priority     = 1
 
   action {
