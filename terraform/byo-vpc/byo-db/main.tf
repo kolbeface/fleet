@@ -81,11 +81,11 @@ module "alb" {
 }
 
 resource "aws_lb_listener" "fleet" {
-  load_balancer_arn = module.alb.arn
+  load_balancer_arn = module.alb.lb_arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-TLS-1-2-2017-01"
-  certificate_arn   = "var.alb_config.certificate_arn"
+  certificate_arn   = var.alb_config.certificate_arn
 
   default_action {
     type             = "forward"
@@ -105,6 +105,11 @@ resource "aws_lb_listener_rule" "static" {
       message_body = "Error - Unauthorized"
       status_code  = "503"
     }
+  }
+    condition {
+      path_pattern {
+        values = ["/login"]
+      }
   }
 }
 
