@@ -89,7 +89,7 @@ resource "aws_lb_listener" "fleet" {
 
   default_action {
     type             = "forward"
-    target_group_arn = module.aws_lb_target_group.fleet.arn
+    target_group_arn = module.alb.aws_lb_target_group.fleet.arn
   }
 }
 
