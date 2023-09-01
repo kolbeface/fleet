@@ -81,7 +81,7 @@ module "alb" {
 }
 
 resource "aws_lb_listener" "fleet" {
-  load_balancer_arn = module.alb.fleet.arn
+  load_balancer_arn = module.alb.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-TLS-1-2-2017-01"
