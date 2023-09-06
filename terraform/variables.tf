@@ -28,12 +28,12 @@
   })
   default = {
     name                = "fleet"
-    cidr                = "10.10.0.0/16"
+    cidr                = "172.20.0.0/16"
     azs                 = ["us-west-2a", "us-west-2b", "us-west-2c"]
-    private_subnets     = ["10.10.1.0/24", "10.10.2.0/24", "10.10.3.0/24"]
-    public_subnets      = ["10.10.11.0/24", "10.10.12.0/24", "10.10.13.0/24"]
-    database_subnets    = ["10.10.21.0/24", "10.10.22.0/24", "10.10.23.0/24"]
-    elasticache_subnets = ["10.10.31.0/24", "10.10.32.0/24", "10.10.33.0/24"]
+    private_subnets     = ["172.20.13.0/24", "172.20.14.0/24", "172.20.15.0/24"]
+    public_subnets      = ["172.20.16.0/24", "172.20.17.0/24", "172.20.18.0/24"]
+    database_subnets    = ["172.20.19.0/24", "172.20.20.0/24", "172.20.21.0/24"]
+    elasticache_subnets = ["172.20.22.0/24", "172.20.23.0/24", "172.20.24.0/24"]
 
     create_database_subnet_group              = false
     create_database_subnet_route_table        = true
