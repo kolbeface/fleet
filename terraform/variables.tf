@@ -1,12 +1,12 @@
  variable "vpc" {
   type = object({
-    name                = optional(string, "fleet")
-    cidr                = optional(string, "10.10.0.0/16")
+    name                = optional(string, "fleetdm")
+    cidr                = optional(string, "172.20.0.0/16")
     azs                 = optional(list(string), ["us-west-2a", "us-west-2b", "us-west-2c"])
-    private_subnets     = optional(list(string), ["10.10.1.0/24", "10.10.2.0/24", "10.10.3.0/24"])
-    public_subnets      = optional(list(string), ["10.10.11.0/24", "10.10.12.0/24", "10.10.13.0/24"])
-    database_subnets    = optional(list(string), ["10.10.21.0/24", "10.10.22.0/24", "10.10.23.0/24"])
-    elasticache_subnets = optional(list(string), ["10.10.31.0/24", "10.10.32.0/24", "10.10.33.0/24"])
+    private_subnets     = optional(list(string), ["172.20.13.0/24", "172.20.14.0/24", "172.20.15.0/24"])
+    public_subnets      = optional(list(string), ["172.20.16.0/24", "172.20.17.0/24", "172.20.18.0/24"])
+    database_subnets    = optional(list(string), ["172.20.19.0/24", "172.20.20.0/24", "172.20.21.0/24"])
+    elasticache_subnets = optional(list(string), ["172.20.22.0/24", "172.20.23.0/24", "172.20.24.0/24"])
 
     create_database_subnet_group              = optional(bool, false)
     create_database_subnet_route_table        = optional(bool, true)
